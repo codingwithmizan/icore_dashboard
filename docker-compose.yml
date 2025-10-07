@@ -1,0 +1,46 @@
+
+    
+services:
+  fronend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: supply_chain_website
+    ports:
+      - "3000:300"
+    env_file:
+      - ./.env
+      - ./.env.local
+      - ./.env.development
+    volumes:
+      - ./:/app
+      - app_node_modules:/app/node_modules
+      - app_next:/app/.next
+    environment:
+      - NODE_ENV=development
+    command: bun dev
+
+  fronend-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: supply_chain_website_prod
+    ports:
+      - "3001:3000"
+    env_file:
+      - ./.env
+      - ./.env.local
+      - ./.env.production
+    volumes:
+      - app_node_modules:/app/node_modules
+    environment:
+      - NODE_ENV=production
+    command: "bun start"
+
+volumes:
+  app_node_modules:
+    driver: local
+  app_next:
+    driver: local

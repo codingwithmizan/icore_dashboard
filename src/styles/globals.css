@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+@plugin 'tailwind-scrollbar';
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* custom classes using tailwindcss class */
+.btn-primary {
+  @apply rounded bg-fuchsia-800 px-4 py-2 text-white shadow-lg hover:bg-amber-700/90;
+}
+
+/* custom css classes */
+.clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* scrollbar customization */
+.scrollbar-container {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.scrollbar-container:hover {
+  scrollbar-color: #4b5563 transparent;
+}
+
+.scrollbar-container:hover::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+/*Antd Customization*/
+.ant-table-thead > tr > th {
+  background-color: #f0fdf4 !important;
+  color: #065f46 !important;
+  font-weight: 600 !important;
+}
+
+.ant-table-thead > tr > th:first-child {
+  border-top-left-radius: 0 !important;
+}
+
+.ant-table-thead > tr > th:last-child {
+  border-top-right-radius: 0 !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+.ant-input::placeholder,
+.ant-picker-input input::placeholder {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: oklch(70.7% 0.022 261.325) !important;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: oklch(70.7% 0.022 261.325) !important;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: oklch(70.7% 0.022 261.325) !important;
+}

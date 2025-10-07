@@ -10,7 +10,8 @@ import { PageTitle } from "@/components/common";
 
 
 const getUserDetails = async (id:string) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL_V1}/users/${id}`);
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL_V1}/users/${id}`);
+    const res = await fetch(`https://dummyjson.com/users/${id}`);
   return res.json();
 };
 

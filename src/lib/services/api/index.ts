@@ -9,7 +9,8 @@ interface ApiResponse<T> {
 }
 
 const getBaseUrl = (): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+    const baseUrl = "http://localhost:3000/api/v1";
   if (!baseUrl) {
     throw new Error("Base URL is not defined in environment variables.");
   }

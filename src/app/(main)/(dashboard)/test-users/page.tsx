@@ -3,7 +3,8 @@ import { TestUserListHeader } from "@/components/dashborad/TestUserListHeader";
 import { TestUserList } from "@/components/dashborad/TestUserList";
 
 const getUsers = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL_V1}/users`);
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL_V1}/users`);
+  const res = await fetch(`https://dummyjson.com/users`);
   return res.json();
 };
 
